@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Set;
 
 // Класс "Стопка" служит для хранения пердметов
-
+// реализация через LinkedList
 public class StackedLinkList extends Item implements PutGetItem {
 
     private int allowedSize;                           // доустимая высота стопки
@@ -49,16 +49,14 @@ public class StackedLinkList extends Item implements PutGetItem {
 
     public void putItem(Item item) {
 
-        if (!this.insideItems.contains(item)) {
-            try {
-                if (this.insideItems.size() < this.allowedSize)
+        if (!(item instanceof StackedLinkList)){
+            if (!item.packed){   // пердмет запакован?
+                if (this.insideItems.size() < this.allowedSize) {
                     this.insideItems.addLast(item);
-                else System.out.println("Превышен разрешенный размер стопки!");
-            } catch (NullPointerException e) {
-                System.out.println("проверьте правильность созданной стопки");
-            }
-        }
-        else System.out.println("Данный предмет здесь уже есть!");
+                    item.packed = true;
+                } else System.out.println ("Превышен разрешенный размер стопки!");
+            } else System.out.println("Данный предмет уже упакован!");
+        } else System.out.println(" ");
     }
 
     public void getItem(Item item) {
@@ -66,6 +64,7 @@ public class StackedLinkList extends Item implements PutGetItem {
             int i = this.insideItems.indexOf(item);
             System.out.println(this.insideItems.get(i));
             this.insideItems.remove();
+            this.packed = false;
         }
 
     }

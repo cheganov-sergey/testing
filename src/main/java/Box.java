@@ -1,33 +1,31 @@
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 // класс "Коробка" служит для хранения пердметов
 
 public class Box extends Item implements PutGetItem {
 
     private double allowadlWeight;  // допустимый вес
-    private Set<Item>insideItems;   // что содержит
+    private List<Item> insideItems;   // что содержит
 
     // Конструктор по умолчанию
     public Box() {
         super ("Стандартная коробка", 1.0, true, true);
         this.allowadlWeight = 20.0;
-        this.insideItems = new LinkedHashSet<Item>();
+        this.insideItems = new ArrayList<Item>();
     }
 
     // Конструктор со всеми параметрами
     public Box(String name, double weight, boolean flat, boolean bigSize, Set<String> otherCharacters, double allowadlWeight) {
         super(name, weight, flat, bigSize, otherCharacters);
         this.allowadlWeight = allowadlWeight;
-        this.insideItems = new LinkedHashSet<Item>();
+        this.insideItems = new ArrayList<Item>();
         }
 
     // Конструктор без мноества
     public Box(String name, double weight, boolean flat, boolean bigSize, double allowadlWeight) {
         super(name, weight, flat, bigSize);
         this.allowadlWeight = allowadlWeight;
-        this.insideItems = new LinkedHashSet<Item>();
+        this.insideItems = new ArrayList<Item>();
     }
 
     @Override
@@ -46,28 +44,29 @@ public class Box extends Item implements PutGetItem {
 
     public void putItem(Item item) {
 
-        if (!item.bigSize) {
-            if (insideItems.contains(item)) System.out.println("Это здесьб уже есть!");
-            double weigthMax = 0.0;
-            for (Item i : insideItems) {
-                weigthMax = weigthMax + i.weight;
-            }
-            if ((weigthMax + item.weight) <= this.allowadlWeight) {
-                try {
-                    insideItems.add(item);
-                } catch (Exception e) {
-                    System.out.println("Ошибка: " + e);
-                }
-            } else System.out.println("Максимально разрешенный вес " + this.name + " превышен");
-        }
-            else System.out.println("этот предмет слишком большой, попробуйте воспользоватся мешком.");
+        if (!(item instanceof Box)) {  //  это не коробка?
+            if (!item.packed){      // предмет уже упакован?
+               if (!item.bigSize) {     // предмет влазит в коробку?
+                    double weigthMax = 0.0;  //  коробка выдержит?
+                    for (Item i : insideItems) {
+                        weigthMax = weigthMax + i.weight;
+                    }
+                    if ((weigthMax + item.weight) <= this.allowadlWeight) {   // упаковываем предмет
+                        insideItems.add(item);
+                        item.packed = true;
+                    } else System.out.println("Максимально разрешенный вес " + this.name + " превышен");
+                } else System.out.println("этот предмет слишком большой, попробуйте воспользоватся мешком.");
+            } else System.out.println("что бы переупаковать предмет, сперва его надо достать");
+        } else System.out.println("Нельзя упаковать коробку в коробку!");
         }
 
     public void getItem(Item item) {
-        if (insideItems.contains(item)) {
-            insideItems.remove(item);
+        if (!this.insideItems.isEmpty()) {  // а не пусто ли?
+            if (insideItems.contains(item)) {   // а может предмета здесь нет?
+                insideItems.remove(item);
+                item.packed = false;
+            } else System.out.println("данного предмета здесть нет!");
         }
-        else System.out.println("данного предмета здесть нет!");
     }
 
     public void showItem() {
@@ -100,11 +99,11 @@ public class Box extends Item implements PutGetItem {
         this.allowadlWeight = allowadlWeight;
     }
 
-    public Set<Item> getInsideItems() {
+    public List<Item> getInsideItems() {
         return insideItems;
     }
 
-    public void setInsideItems(Set<Item> insideItems) {
+    public void setInsideItems(List<Item> insideItems) {
 
         this.insideItems = insideItems;
 

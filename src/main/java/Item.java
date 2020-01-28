@@ -4,11 +4,12 @@ import java.util.Set;
 
 public abstract class Item {
 
-   String name;
-   double weight;
-   boolean flat;
-   boolean bigSize;
-   Set<String> otherCharacters;
+   String name;  // имя
+   double weight;  // вес
+   boolean flat;  // можно ли упаковывать стопкой
+   boolean bigSize;   // негабаритная вещь
+   Set<String> otherCharacters;  // дополнительные параметры
+   boolean packed;   // защита от повторной упаковки
 
    // Конструктор объекта по умолчанию
    public Item(){
@@ -17,6 +18,7 @@ public abstract class Item {
       this.flat = true;
       this.bigSize = false;
       this.otherCharacters = new HashSet<String>();
+      boolean packed = false;
    }
 
 
@@ -27,6 +29,7 @@ public abstract class Item {
       this.flat = flat;
       this.bigSize = bigSize;
       this.otherCharacters = new HashSet<String>();
+      boolean packed = false;
    }
 
    // конструктор с доп. параметрами
@@ -36,6 +39,7 @@ public abstract class Item {
       this.flat = flat;
       this.bigSize = bigSize;
       this.otherCharacters = new HashSet<String>(otherCharacters);
+      boolean packed = false;
    }
 
    @Override

@@ -2,8 +2,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.Stack;
 
-// Данный класс не работает полностью! (нельза получить произволдьный элемент стека)
-// не разобрался до конца как сделать, допишу позже, а пока см. StackedLinkList
+// реализация стопки через Стек
 
 public class Stacked extends Item implements PutGetItem {
 
@@ -35,12 +34,22 @@ public class Stacked extends Item implements PutGetItem {
     }
 
     public void putItem(Item item) {
-        if (item.flat)
-            if (this.insideItems.size() < this.allowedSize) {
-                this.insideItems.push(item);}
-                else System.out.println("Размер стопки достиг максимального значения");
-            else System.out.println("Этот предмет нельзя складировать стопклй!");
+        if (!(item instanceof Stacked)) {   //это стопка?
+            if (item.flat) {                // можно складировать стопкой?
+                if (this.insideItems.size() < this.allowedSize) {   // влезет?
+                    this.insideItems.push(item);
+                    item.packed = true;
+                } else System.out.println("Размер стопки достиг максимального значения");
+            } else System.out.println("Этот предмет нельзя складировать стопклй!");
+        } else System.out.println("Нельзя поместить стопку в стопку");
     }
+
+    public void getItem(){  //Забрать верхний элемент из стопки
+       if (!this.insideItems.empty()) {
+           this.insideItems.peek().packed = false;
+           this.insideItems.pop();
+       }
+   }
 
     public void getItem(Item item) { // забрать указанный элемент (Не работает!!!)
        int it = -1;

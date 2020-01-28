@@ -30,6 +30,7 @@ public class Run {
         box2.putItem(brick1);
         System.out.println(box2);
         System.out.println();
+        box1.putItem(box1);
 
         Bag bag = new Bag();
         Whell whell1 = new Whell();
@@ -38,6 +39,8 @@ public class Run {
         bag.putItem(whell1);
         bag.putItem(whell2);
         bag.putItem(whell3);
+        Brick  brick5 = new Brick();
+        bag.putItem(brick5);
         System.out.println(bag);
         bag.getItem(whell1);
         bag.getItem(blok);
@@ -45,13 +48,17 @@ public class Run {
         bag.putItem(brick1);
         bag.showItem();
         System.out.println(bag);
+        bag.putItem(bag);
+        bag.getByName("Колесо");
+        bag.showItem();
         System.out.println();
 
+
         StackedLinkList stackLL = new StackedLinkList();
-        stackLL.putItem(whell1);
-        stackLL.putItem(whell1); // проверка на дубликат объекта
-        stackLL.putItem(whell2);
-        stackLL.putItem(whell3);
+        //stackLL.putItem(whell1);
+        //stackLL.putItem(whell1); // проверка на дубликат объекта
+        //stackLL.putItem(whell2);
+        //stackLL.putItem(whell3);
         stackLL.putItem(box1);
         stackLL.putItem(box2);
         stackLL.putItem(brick1);
@@ -63,21 +70,23 @@ public class Run {
 
 
 
-//        Stacked stack = new Stacked();
-//        stack.putItem(box1);
-//        stack.putItem(box2);
-//        stack.putItem(whell1);
-//        stack.putItem(bag);
-//        stack.putItem(brick1);
-//        stack.putItem(whell2);
-//        stack.putItem(whell2);
-//        stack.putItem(whell3);
-//
-//        System.out.println(stack);
-//        stack.getItem(brick1);
-//       // stack.getItem(brick2);
-//       // stack.showItem();
-//        System.out.println(stack);
+        Stacked stack = new Stacked();
+        stack.putItem(box1);
+        stack.putItem(box2);
+        //stack.putItem(whell1);
+        stack.putItem(bag);
+        stack.putItem(brick1);
+       // stack.putItem(whell2);
+       // stack.putItem(whell2);
+       // stack.putItem(whell3);
+
+        System.out.println(stack);
+        stack.getItem();
+        stack.getItem();
+        stack.showItem();
+        stack.putItem(stack);
+        System.out.println(stack);
+
 
 
 

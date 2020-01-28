@@ -1,36 +1,33 @@
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 // Класс "Мешок" служит для хранения пердметов
 
 public class Bag extends Item implements PutGetItem {
 
     private double allowedWeigth;   // допустимый вес
-    private Set<Item> insideItems;   // что содержит
+    private List<Item> insideItems;   // что содержит
 
     public Bag(){
         super ("стандартный мешок", 0.5, false, true);
         this.allowedWeigth = 50.0;
-        this.insideItems = new HashSet<Item>();
+        this.insideItems = new ArrayList<Item>();
     }
 
     public Bag(double allowedWeigth, Set<Item> insideItems) {
         this.allowedWeigth = allowedWeigth;
-        this.insideItems = new HashSet<Item>(insideItems);
+        this.insideItems = new ArrayList<Item>();
     }
 
     public Bag(String name, double weight, boolean flat, boolean bigSize, double allowedWeigth, Set<Item> insideItems) {
         super(name, weight, flat, bigSize);
         this.allowedWeigth = allowedWeigth;
-        this.insideItems = new HashSet<Item>(insideItems);
+        this.insideItems = new ArrayList<Item>();
     }
 
     public Bag(String name, double weight, boolean flat, boolean bigSize, Set<String> otherCharacters, double allowedWeigth, Set<Item> insideItems) {
         super(name, weight, flat, bigSize, otherCharacters);
         this.allowedWeigth = allowedWeigth;
-        this.insideItems = new HashSet<Item>(insideItems);
+        this.insideItems = new ArrayList<Item>();
     }
 
     // Реализация итерфейса --
@@ -92,6 +89,16 @@ public class Bag extends Item implements PutGetItem {
         }
     }
 
+    public void getRandom(){        //  получить случайный предмет
+        if (!this.insideItems.isEmpty()){
+            Random random = new Random();
+            int i = random.nextInt(this.insideItems.size());
+            System.out.println("Случайно вытащили " + this.insideItems.get(i));
+            this.insideItems.get(i).packed = false;
+            this.insideItems.remove(i);
+        }
+    }
+
     @Override
     public String toString() {
         return "Мешок {" + name +
@@ -108,7 +115,7 @@ public class Bag extends Item implements PutGetItem {
         return allowedWeigth;
     }
 
-    public Set<Item> getInsideItems() {
+    public List<Item> getInsideItems() {
         return insideItems;
     }
 }

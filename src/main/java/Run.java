@@ -52,6 +52,7 @@ public class Run {
         bag.putItem(bag);
         bag.getByName("Колесо");
         bag.showItem();
+        bag.getRandom();
         System.out.println();
 
 

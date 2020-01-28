@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Set;
 
 // Класс "Мешок" служит для хранения пердметов
@@ -90,7 +91,6 @@ public class Bag extends Item implements PutGetItem {
             }
         }
     }
-
 
     @Override
     public String toString() {

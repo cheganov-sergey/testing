@@ -89,6 +89,16 @@ public class Box extends Item implements PutGetItem {
     }
     // --- Реализация интерфейса GetPutItem
 
+    public void getRandom(){        //  получить случайный предмет
+        if (!this.insideItems.isEmpty()){
+            Random random = new Random();
+            int i = random.nextInt(this.insideItems.size());
+            System.out.println("Случайно вытащили " + this.insideItems.get(i));
+            this.insideItems.get(i).packed = false;
+            this.insideItems.remove(i);
+        }
+    }
+
 
 
     public double getAllowadlWeight() {

@@ -22,6 +22,15 @@ public abstract class Item {
    }
 
 
+   public Item(String name, double weight, boolean flat, boolean bigSize, boolean packed) {
+      this.name = name;
+      this.weight = weight;
+      this.flat = flat;
+      this.bigSize = bigSize;
+      this.otherCharacters = new HashSet<String>();
+      this.packed = packed;
+   }
+
    // Конструктор без доп.параметров
    public Item(String name, double weight, boolean flat, boolean bigSize) {
       this.name = name;

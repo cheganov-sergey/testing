@@ -1,5 +1,6 @@
-
-    // Класс "Кирпич" предмет
+/**
+ * Класс "Кирпич" предмет
+ */
 
 public class Brick extends Item {
 
@@ -9,6 +10,6 @@ public class Brick extends Item {
 
     @Override
     public String toString() {
-        return  name;
+        return  getName();
     }
 }

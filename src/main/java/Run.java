@@ -1,3 +1,7 @@
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
+
 public class Run {
 
     public static void main(String[] args) {
@@ -7,12 +11,18 @@ public class Run {
         Brick brick2 = new Brick();
         Blok blok = new Blok();
 
-        box1.putItem(brick1);
-        box1.putItem(brick2);
-        box1.putItem(brick1);
-        box1.putItem(blok);
+        try {
+            box1.putItem(brick1);
+            box1.putItem(brick2);
+            box1.putItem(brick1);
+            box1.putItem(blok);
+        }
+        catch (CaseExсeption e){
+            System.out.println("Коробка порвалась! " + e);
+        }
         box1.showItem();
         System.out.println(box1);
+        //Stream stream = List.stream();
         System.out.println();
 
         Box box2 = new Box();
@@ -20,16 +30,21 @@ public class Run {
         Blok blok2 = new Blok();
         Brick brick3 = new Brick();
 
-        box2.putItem(blok1);
-        box2.putItem(blok2);
-        box2.putItem(brick3);
+        try {
+            box2.putItem(blok1);
+            box2.putItem(blok2);
+            box2.putItem(brick3);
+            box2.putItem(brick1);
+            box1.putItem(box1);
+        }
+        catch (CaseExсeption e){
+            System.out.println("Коробка порвалась! " + e);
+        }
         box2.showItem();
         System.out.println(box2);
         box2.getItem(blok2);
         box2.getItem((blok2));
-        box2.putItem(brick1);
         System.out.println(box2);
-        box1.putItem(box1);
         box1.getRandom();
         System.out.println();
 
@@ -38,18 +53,30 @@ public class Run {
         Whell whell1 = new Whell();
         Whell whell2 = new Whell();
         Whell whell3 = new Whell();
-        bag.putItem(whell1);
-        bag.putItem(whell2);
-        bag.putItem(whell3);
+        try {
+            bag.putItem(whell1);
+            bag.putItem(whell2);
+            bag.putItem(whell3);
+        }
+        catch (CaseExсeption e) {
+            System.out.println("Мешок порвался! " + e);
+        }
         Brick  brick5 = new Brick();
-        bag.putItem(brick5);
+
         System.out.println(bag);
         bag.getItem(whell1);
         bag.getItem(blok);
-        bag.putItem(blok);
+        try {
+            bag.putItem(brick5);
+            bag.putItem(blok);
+            bag.putItem(bag);
+        }
+        catch (CaseExсeption e) {
+            System.out.println("Мешок порвался! " + e);
+        }
         bag.showItem();
         System.out.println(bag);
-        bag.putItem(bag);
+
         bag.getByName("Колесо");
         bag.showItem();
         bag.getRandom();

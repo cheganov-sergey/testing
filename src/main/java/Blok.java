@@ -1,6 +1,7 @@
+/**
+ * Класс "Блок" (большой кирпич) пердмет
+ */
 public class Blok extends Item {
-
-    // Класс "Блок" пердмет
 
     public Blok() {
         super("Блок", 10.0, true, false);
@@ -8,6 +9,6 @@ public class Blok extends Item {
 
     @Override
     public String toString() {
-        return name;
+        return getName();
     }
 }

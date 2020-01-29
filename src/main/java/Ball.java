@@ -1,5 +1,6 @@
-
-    // Класс "Мяч" предмет
+/**
+ * Класс "Мяч" предмет
+ */
 
 public class Ball extends Item {
     public Ball() {
@@ -8,7 +9,7 @@ public class Ball extends Item {
 
     @Override
     public String toString() {
-        return name;
+        return getName();
     }
 
 }

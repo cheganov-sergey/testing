@@ -1,9 +1,16 @@
 import java.util.*;
+import java.util.stream.Stream;
 
-// класс "Коробка" служит для хранения пердметов
+/**
+ * класс "Коробка" служит для хранения пердметов
+ */
 
 public class Box extends Item implements PutGetItem {
 
+    /**
+     * @param allowWeigth - допустимый вес
+     * @param insideItems - что содержит данный кейс
+     */
     private double allowadlWeight;  // допустимый вес
     private List<Item> insideItems;   // что содержит
 
@@ -30,92 +37,117 @@ public class Box extends Item implements PutGetItem {
 
     @Override
     public String toString() {
-        return "Коробка " + name + " {" +
+        return "Коробка " + this.getName() + " {" +
                 " содержит:" + insideItems +
                 "весом: " + getCurrentweigth() + "кг." +
-                ", плоский:" + flat +
-                ", большой:" + bigSize +
-                ", другие параметры:" + otherCharacters +
+                ", плоский:" + this.isFlat() +
+                ", большой:" + this.isBigSize() +
+                ", другие параметры:" + getOtherCharacters() +
                 ", грузоподъемность:" + allowadlWeight +
                 '}';
     }
 
     // Реализация интерфейса GetPutItem ---
 
-    public void putItem(Item item) {
+    /**
+     * положить предмет в коробку
+     * @param item предмет который мы хотм положить в коробку
+     * @throws CaseExсeption в случае если коробка порвется от перегруза
+     */
+    public void putItem(Item item) throws CaseExсeption{
 
         if (!(item instanceof Box)) {  //  это не коробка?
-            if (!item.packed){      // предмет уже упакован?
-               if (!item.bigSize) {     // предмет влазит в коробку?
+            if (!item.isPacked()){      // предмет уже упакован?
+               if (!item.isBigSize()) {     // предмет влазит в коробку?
                     double weigthMax = 0.0;  //  коробка выдержит?
                     for (Item i : insideItems) {
-                        weigthMax = weigthMax + i.weight;
+                        weigthMax = weigthMax + i.getWeight();
                     }
-                    if ((weigthMax + item.weight) <= this.allowadlWeight) {   // упаковываем предмет
+                    if ((weigthMax + item.getWeight()) <= this.allowadlWeight) {   // упаковываем предмет
                         insideItems.add(item);
-                        item.packed = true;
-                    } else System.out.println("Максимально разрешенный вес " + this.name + " превышен");
+                        item.setPacked(true);
+                    } else throw new CaseExсeption("Максимально разрешенный вес " + this.getName() + " превышен");
                 } else System.out.println("этот предмет слишком большой, попробуйте воспользоватся мешком.");
             } else System.out.println("что бы переупаковать предмет, сперва его надо достать");
         } else System.out.println("Нельзя упаковать коробку в коробку!");
         }
 
+    /**
+     * получение указанного предмета
+     * @param item предмет который мы хотим достать из коробки
+     */
     public void getItem(Item item) {
         if (!this.insideItems.isEmpty()) {  // а не пусто ли?
             if (insideItems.contains(item)) {   // а может предмета здесь нет?
                 insideItems.remove(item);
-                item.packed = false;
+                item.setPacked(false);
             } else System.out.println("данного предмета здесть нет!");
         }
     }
 
-    public void showItem() {
-        if (!this.insideItems.isEmpty()) {
-            System.out.println(name + " весом " + getCurrentweigth() + ", здесть находится:");
-            for (Item it : insideItems)
-                System.out.println(it);
-            }
-        else System.out.println("здесь пусто!");
-        }
+    /**
+     * Посмотреть список предметов в коробке
+     * реализация через стрим
+     */
+      public void showItem(){
+          if(!this.insideItems.isEmpty()){
+              Stream<Item> stream = this.insideItems.stream();
+              stream.forEach(System.out::println);
+          }
+      }
+//    public void showItem() {
+//        if (!this.insideItems.isEmpty()) {
+//            System.out.println(getName() + " весом "
+//                    + getCurrentweigth()
+//                    + ", здесть находится:");
+//            for (Item it : insideItems)
+//                System.out.println(it);
+//            }
+//        else System.out.println("здесь пусто!");
+//        }
 
-
+    /**
+     * Получить текущий вес коробки
+     * @return возвращает суммарный вес тары и предметов в ней
+     */
 
     public double getCurrentweigth() {
-        double currentWeigth = this.weight;
+        double currentWeigth = this.getWeight();
         for(Item it : insideItems) {
-            currentWeigth = currentWeigth + it.weight;
+            currentWeigth = currentWeigth + it.getWeight();
         }
         return currentWeigth;
     }
     // --- Реализация интерфейса GetPutItem
 
+    /**
+     * Получить случайный предмет из коробки
+     */
     public void getRandom(){        //  получить случайный предмет
         if (!this.insideItems.isEmpty()){
             Random random = new Random();
             int i = random.nextInt(this.insideItems.size());
             System.out.println("Случайно вытащили " + this.insideItems.get(i));
-            this.insideItems.get(i).packed = false;
+            this.insideItems.get(i).setPacked(false);
             this.insideItems.remove(i);
         }
     }
 
-
-
-    public double getAllowadlWeight() {
-        return allowadlWeight;
+    /**
+     * получить предмет по названию
+     * @param name имя предмета в формате String
+     */
+    public void getByName (String name){        // не понял как добавить флаг "packed"
+        if (!this.insideItems.isEmpty()) {
+            Iterator<Item> iterator = this.insideItems.iterator();
+            while (iterator.hasNext()) {
+                Item it = iterator.next();
+                if (it.getName().equals(name)) {
+                    System.out.println("Мы взяли " + it.getName());
+                    iterator.remove();
+                }
+            }
+        }
     }
 
-    public void setAllowadlWeight(double allowadlWeight) {
-        this.allowadlWeight = allowadlWeight;
-    }
-
-    public List<Item> getInsideItems() {
-        return insideItems;
-    }
-
-    public void setInsideItems(List<Item> insideItems) {
-
-        this.insideItems = insideItems;
-
-    }
-}
+   }

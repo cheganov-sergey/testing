@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -11,13 +12,13 @@ public class Box extends Item implements PutGetItem {
      * @param allowWeigth - допустимый вес
      * @param insideItems - что содержит данный кейс
      */
-    private double allowadlWeight;  // допустимый вес
+    private final double allowadlWeight;  // допустимый вес
     private List<Item> insideItems;   // что содержит
 
     // Конструктор по умолчанию
     public Box() {
         super ("Стандартная коробка", 1.0, true, true);
-        this.allowadlWeight = 20.0;
+        this.allowadlWeight = 30.0;
         this.insideItems = new ArrayList<Item>();
     }
 
@@ -86,26 +87,19 @@ public class Box extends Item implements PutGetItem {
     }
 
     /**
-     * Посмотреть список предметов в коробке
-     * реализация через стрим
+     * Вывести список предметов в алфавитном порядке (то что содержится в коробке
+     * реализация через Стрим
      */
       public void showItem(){
           if(!this.insideItems.isEmpty()){
-              Stream<Item> stream = this.insideItems.stream();
-              stream.forEach(System.out::println);
+              System.out.println("Коробка содержит: ");
+              List<Item> byName = insideItems.stream().
+                      sorted(Comparator.comparing(Item::getName)).
+                      collect(Collectors.toList());
+              byName.forEach(System.out::println);
           }
       }
-//    public void showItem() {
-//        if (!this.insideItems.isEmpty()) {
-//            System.out.println(getName() + " весом "
-//                    + getCurrentweigth()
-//                    + ", здесть находится:");
-//            for (Item it : insideItems)
-//                System.out.println(it);
-//            }
-//        else System.out.println("здесь пусто!");
-//        }
-
+//
     /**
      * Получить текущий вес коробки
      * @return возвращает суммарный вес тары и предметов в ней
@@ -118,7 +112,10 @@ public class Box extends Item implements PutGetItem {
         }
         return currentWeigth;
     }
-    // --- Реализация интерфейса GetPutItem
+
+    /**
+     * --- Реализация интерфейса GetPutItem
+      */
 
     /**
      * Получить случайный предмет из коробки
@@ -133,21 +130,5 @@ public class Box extends Item implements PutGetItem {
         }
     }
 
-    /**
-     * получить предмет по названию
-     * @param name имя предмета в формате String
-     */
-    public void getByName (String name){        // не понял как добавить флаг "packed"
-        if (!this.insideItems.isEmpty()) {
-            Iterator<Item> iterator = this.insideItems.iterator();
-            while (iterator.hasNext()) {
-                Item it = iterator.next();
-                if (it.getName().equals(name)) {
-                    System.out.println("Мы взяли " + it.getName());
-                    iterator.remove();
-                }
-            }
-        }
-    }
 
    }

@@ -8,7 +8,7 @@ import java.util.Set;
 public abstract class Item {
 
    String name;  // имя
-   private double weight;  // вес
+   private final double weight;  // вес
    private boolean flat;  // можно ли упаковывать стопкой
    private boolean bigSize;   // негабаритная вещь
    private Set<String> otherCharacters;  // дополнительные параметры

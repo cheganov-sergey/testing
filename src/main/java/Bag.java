@@ -1,22 +1,22 @@
 import java.util.*;
 
 /**
- * Класс "Мешок" служит для хранения пердметов
+ * Класс "Мешок" служит для хранения пердметов.
  */
 
 public class Bag extends Item implements PutGetItem {
 
-    private double allowedWeigth;   // допустимый вес
+    private final double allowedWeigth;   // допустимый вес
     private List<Item> insideItems;   // что содержит
 
-   public Bag(){
-        super ("стандартный мешок", 0.5, false, true);
+   public Bag() {
+        super ("стандартный мешок", 0.5, false, true );
         this.allowedWeigth = 50.0;
         this.insideItems = new ArrayList<Item>();
     }
 
     /**
-     * конструктор
+     * конструктор.
      * @param allowedWeigth допустимый вес
      * @param insideItems какие предметы содержит данный мешок
      */
@@ -58,8 +58,10 @@ public class Bag extends Item implements PutGetItem {
                 else {
                     throw new CaseExсeption("Максимально разрешенный вес " + this.getName() + " превышен");
                 }
-            } else System.out.println("что бы переупаковать предмет, сперва его надо достать");
-        }else System.out.println("Нельзя упаковать мешок в мешок или коробку");
+            }
+            else System.out.println("что бы переупаковать предмет, сперва его надо достать");
+        }
+        else System.out.println("Нельзя упаковать мешок в мешок или коробку");
     }
 
     /**
@@ -71,7 +73,8 @@ public class Bag extends Item implements PutGetItem {
             if (insideItems.contains(item)) {   // а может предмета здесь нет?
                 insideItems.remove(item);
                 item.setPacked(false);
-            } else System.out.println("данного предмета здесть нет!");
+            }
+            else System.out.println("данного предмета здесть нет!");
         }
     }
 

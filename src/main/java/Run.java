@@ -1,7 +1,3 @@
-import java.util.Collection;
-import java.util.List;
-import java.util.stream.Stream;
-
 public class Run {
 
     public static void main(String[] args) {
@@ -22,20 +18,21 @@ public class Run {
         }
         box1.showItem();
         System.out.println(box1);
-        //Stream stream = List.stream();
         System.out.println();
 
         Box box2 = new Box();
+        Brick brick = new Brick();
         Blok blok1 = new Blok();
         Blok blok2 = new Blok();
         Brick brick3 = new Brick();
 
         try {
-            box2.putItem(blok1);
+            box2.putItem(brick);
             box2.putItem(blok2);
             box2.putItem(brick3);
             box2.putItem(brick1);
             box1.putItem(box1);
+            box2.putItem(blok1);
         }
         catch (CaseExсeption e){
             System.out.println("Коробка порвалась! " + e);
@@ -47,7 +44,6 @@ public class Run {
         System.out.println(box2);
         box1.getRandom();
         System.out.println();
-
 
         Bag bag = new Bag();
         Whell whell1 = new Whell();
@@ -82,7 +78,6 @@ public class Run {
         bag.getRandom();
         System.out.println();
 
-
         StackedLinkList stackLL = new StackedLinkList();
         stackLL.putItem(whell1);
         stackLL.putItem(whell1); // проверка на дубликат объекта
@@ -96,8 +91,6 @@ public class Run {
         StackedLinkList sll =new StackedLinkList();
         sll.showItem();
         System.out.println();
-
-
 
         Stacked stack = new Stacked();
         stack.putItem(box1);
@@ -115,14 +108,5 @@ public class Run {
         stack.showItem();
         stack.putItem(stack);
         System.out.println(stack);
-
-
-
-
-
-
-
-
-
     }
 }

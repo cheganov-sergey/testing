@@ -4,7 +4,7 @@ public class Run {
 
         Box box1 = new Box();
         Brick brick1 = new Brick();
-        Brick brick2 = new Brick();
+        Brick brick2 = new Brick(10);
         Blok blok = new Blok();
 
         try {

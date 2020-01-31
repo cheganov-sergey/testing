@@ -55,6 +55,15 @@ public class Stacked extends Item implements PutGetItem {
     }
 
     /**
+     * не возможно получить произвольный предмет
+     * @param item
+     */
+    @Override
+    public void getItem(Item item) {
+        System.out.println("Ошибка!");
+    }
+
+    /**
      * метод - получить верхний предмет из стопки
      */
     public void getItem(){  //Забрать верхний элемент из стопки
@@ -64,30 +73,7 @@ public class Stacked extends Item implements PutGetItem {
        }
    }
 
-    /**
-     * Метод получить указанный предмет (не работает!)
-     * @param item искомый предмет
-     */
-    public void getItem(Item item) { // забрать указанный элемент (Не работает!!!)
-       int it = -1;
-       it = this.insideItems.search(item);
-        if ( it > 0 ) {
-            Stack<Item> s = new Stack<Item>();
-            Iterator<Item> iterator = insideItems.iterator();
-            for (int i = 1; i <= it; i++){
-                s.push(iterator.next());
-                }
-            System.out.println(iterator.next());
-            iterator.remove();
-            s.clear();
-           // for (Item items : s){
-            //    this.insideItems.push(items);
-           // }
-        }
-
-    }
-
-    /**
+     /**
      * метод - показать верхний предмет
      */
     public void showItem() {                   // должен возвращать верхний предмет из стопки.
@@ -112,5 +98,9 @@ public class Stacked extends Item implements PutGetItem {
                 ", вес:=" + getWeight() +
                 ", дополнительно: " + getOtherCharacters() +
                 '}';
+    }
+
+    public Stack<Item> getInsideItems() {
+        return insideItems;
     }
 }

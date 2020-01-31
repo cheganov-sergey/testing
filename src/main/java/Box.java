@@ -130,5 +130,11 @@ public class Box extends Item implements PutGetItem {
         }
     }
 
+    public double getAllowadlWeight() {
+        return allowadlWeight;
+    }
 
-   }
+    public List<Item> getInsideItems() {
+        return insideItems;
+    }
+}

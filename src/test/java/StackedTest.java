@@ -1,4 +1,3 @@
-import net.sf.saxon.om.Item;
 import org.junit.Assert;
 import org.junit.Test;
 

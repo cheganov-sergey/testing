@@ -13,7 +13,7 @@ public class Stacked extends Item implements PutGetItem {
 
    public Stacked(){
        super("Стопка (S)", 0.0, true, true);
-       this.allowedSize = 10;
+       this.allowedSize = 5;
        this.insideItems = new Stack<>();
    }
 
@@ -102,7 +102,7 @@ public class Stacked extends Item implements PutGetItem {
     @Override
     public String toString() {
         return "Стопка: "+ getName() +" {" +
-                " разрешенный вес:" + allowedSize +
+                " допустимая высота:" + allowedSize +
                 ", insideItems=" + insideItems +
                 ", вес:=" + getWeight() +
                 ", дополнительно: " + getOtherCharacters() +

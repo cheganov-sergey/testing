@@ -154,16 +154,19 @@ public class Box extends Item implements PutGetItem {
      * Достать предмет по имени
      * @param name имя искомого предмета
      */
-    public void getByName (String name){        // не понял как добавить флаг "packed"
+    public String getByName (String name){
         if (!this.insideItems.isEmpty()) {
             Iterator<Item> iterator = this.insideItems.iterator();
             while (iterator.hasNext()) {
                 Item it = iterator.next();
                 if (it.getName().equals(name)) {
                     System.out.println("Мы взяли " + it.getName());
+                    String s = it.getName();
                     iterator.remove();
+                    return s;
                 }
             }
         }
+        return "Ничего не найдено";
     }
 }

@@ -16,7 +16,7 @@ public class Bag extends Box {
      * @param item предмет который мы хотм положить в мешок
      */
     @Override
-    public void putItem(Item item) throws CaseExсeption{
+    public void putItem(Item item) throws CaseExсeption {
 
         if (!(item.equals(this))) {  //  //нельзя упаковаться само в себя
             if (!item.isPacked()){      // предмет уже упакован?

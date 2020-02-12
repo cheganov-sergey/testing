@@ -78,20 +78,6 @@ public class Run {
         bag.getRandom();
         System.out.println();
 
-        StackedLinkList stackLL = new StackedLinkList();
-        stackLL.putItem(whell1);
-        stackLL.putItem(whell1); // проверка на дубликат объекта
-        stackLL.putItem(whell2);
-        stackLL.putItem(whell3);
-        stackLL.putItem(box1);
-        stackLL.putItem(box2);
-        stackLL.putItem(brick1);
-        stackLL.showItem();
-        System.out.println(stackLL);
-        StackedLinkList sll =new StackedLinkList();
-        sll.showItem();
-        System.out.println();
-
         Stacked stack = new Stacked();
         stack.putItem(box1);
         stack.putItem(box2);
@@ -104,9 +90,16 @@ public class Run {
 
         System.out.println(stack);
         stack.getItem();
-        stack.getItem();
+        //stack.getItem();
         stack.showItem();
         stack.putItem(stack);
+        System.out.println(stack);
+
+        System.out.println("Стопка 2:");
+        Stacked stac2 = new Stacked();
+        stac2.putItem(brick5);
+        stac2.putItem(stack);
+        System.out.println(stac2);
         System.out.println(stack);
     }
 }

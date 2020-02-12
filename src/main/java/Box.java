@@ -12,29 +12,31 @@ public class Box extends Item implements PutGetItem {
      * @param allowWeigth - допустимый вес
      * @param insideItems - что содержит данный кейс
      */
-    private final double allowadlWeight;  // допустимый вес
-    private List<Item> insideItems;   // что содержит
+    protected final double allowedlWeight;  // допустимый вес
+    protected List<Item> insideItems;   // что содержит
 
     // Конструктор по умолчанию
     public Box() {
         super ("Стандартная коробка", 1.0, true, true);
-        this.allowadlWeight = 30.0;
+        this.allowedlWeight = 30.0;
         this.insideItems = new ArrayList<>();
     }
 
     // Конструктор со всеми параметрами
     public Box(String name, double weight, boolean flat, boolean bigSize, Set<String> otherCharacters, double allowadlWeight) {
         super(name, weight, flat, bigSize, otherCharacters);
-        this.allowadlWeight = allowadlWeight;
+        this.allowedlWeight = allowadlWeight;
         this.insideItems = new ArrayList<>();
         }
 
     // Конструктор без множества
     public Box(String name, double weight, boolean flat, boolean bigSize, double allowadlWeight) {
         super(name, weight, flat, bigSize);
-        this.allowadlWeight = allowadlWeight;
+        this.allowedlWeight = allowadlWeight;
         this.insideItems = new ArrayList<>();
     }
+
+
 
     @Override
     public String toString() {
@@ -44,7 +46,7 @@ public class Box extends Item implements PutGetItem {
                 ", плоский:" + this.isFlat() +
                 ", большой:" + this.isBigSize() +
                 ", другие параметры:" + getOtherCharacters() +
-                ", грузоподъемность:" + allowadlWeight +
+                ", грузоподъемность:" + allowedlWeight +
                 '}';
     }
 
@@ -65,7 +67,7 @@ public class Box extends Item implements PutGetItem {
                     for (Item i : insideItems) {
                         weigthMax = weigthMax + i.getWeight();
                     }
-                    if ((weigthMax + item.getWeight()) <= this.allowadlWeight) {   // упаковываем предмет
+                    if ((weigthMax + item.getWeight()) <= this.allowedlWeight) {   // упаковываем предмет
                         insideItems.add(item);
                         item.setPacked(true);
                     } else throw new CaseExсeption("Максимально разрешенный вес " + this.getName() + " превышен");
@@ -137,7 +139,7 @@ public class Box extends Item implements PutGetItem {
      * @return текущий вес тары и содержимого в кг.
      */
     public double getAllowadlWeight() {
-        return allowadlWeight;
+        return allowedlWeight;
     }
 
     /**

@@ -12,7 +12,7 @@ public class Bag extends Item implements PutGetItem {
    public Bag() {
         super ("стандартный мешок", 0.5, false, true );
         this.allowedWeigth = 50.0;
-        this.insideItems = new ArrayList<Item>();
+        this.insideItems = new ArrayList<>();
     }
 
     /**
@@ -45,7 +45,7 @@ public class Bag extends Item implements PutGetItem {
      * @throws CaseExсeption в случае если мешок порвется
      */
     public void putItem(Item item) throws CaseExсeption{
-        if (!(item instanceof Bag) & !(item instanceof Box)) {       // нельзя упаковать мешок в мешок или коробку
+        if (!(item.equals(this))) {       // нельзя упаковать предмет сам в себя
             if (!item.isPacked()) {                                      // предмет уже упакован?
                 double weigthMax = 0.0;
                 for (Item i : insideItems) {
@@ -61,7 +61,7 @@ public class Bag extends Item implements PutGetItem {
             }
             else System.out.println("что бы переупаковать предмет, сперва его надо достать");
         }
-        else System.out.println("Нельзя упаковать мешок в мешок или коробку");
+        else System.out.println("Нельзя упаковать предмет сам в себя");
     }
 
     /**

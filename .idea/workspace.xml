@@ -2,86 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3534479b-1d88-4f8e-b97c-be24e1df618a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/bin/allure" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/bin/allure.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/config/allure-cucumber.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/config/allure-junit.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/config/allure.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure-commandline-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure-generator-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure-plugin-api-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure1-model-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure2-model-api-1.0-BETA4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure2-model-jackson-1.0-BETA4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/allure2-model-pojo-1.0-BETA4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-beanutils-1.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-codec-1.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-collections-3.2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-io-2.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-lang3-3.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/commons-text-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/config/jetty-logging.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/config/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/flexmark-0.28.18.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/flexmark-util-0.28.18.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/freemarker-2.3.23.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/httpclient-4.5.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/httpcore-4.4.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jackson-annotations-2.9.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jackson-core-2.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jackson-databind-2.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jackson-dataformat-xml-2.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jackson-dataformat-yaml-2.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jackson-module-jaxb-annotations-2.9.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/javax.servlet-api-3.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jaxb-api-2.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jaxb-utils-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jcommander-1.72.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jetty-http-9.4.8.v20171121.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jetty-io-9.4.8.v20171121.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jetty-server-9.4.8.v20171121.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/jetty-util-9.4.8.v20171121.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/log4j-1.2.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/opencsv-4.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/properties-2.0.RC5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/slf4j-api-1.7.25.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/slf4j-log4j12-1.7.25.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/snakeyaml-1.18.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/stax2-api-3.1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/tika-core-1.16.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/lib/woodstox-core-5.0.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/behaviors-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/behaviors-plugin/plugin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/behaviors-plugin/static/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/custom-logo-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/custom-logo-plugin/static/custom-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/custom-logo-plugin/static/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/junit-xml-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/junit-xml-plugin/junit-xml-plugin-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/packages-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/packages-plugin/plugin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/packages-plugin/static/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/screen-diff-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/screen-diff-plugin/static/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/screen-diff-plugin/static/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/trx-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/trx-plugin/trx-plugin-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/xctest-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/xctest-plugin/lib/xmlwise-1.2.11.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/xctest-plugin/xctest-plugin-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/xunit-xml-plugin/allure-plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.allure/allure-2.6.0/plugins/xunit-xml-plugin/xunit-xml-plugin-2.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StackedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StackedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/checkstyle-cachefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/checkstyle-checker.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/checkstyle-result.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/warehouse.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StackedTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StackedTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Box.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PutGetItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PutGetItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +54,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.warehouse [clean,test]">
+  <component name="RunManager" selected="Application.Run">
+    <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Run" />
+      <module name="warehouse" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoxTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="warehouse" />
       <option name="PACKAGE_NAME" value="" />
@@ -144,16 +76,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BoxTest" />
       <option name="METHOD_NAME" value="tryAddFlatItemToBox" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoxTest.tryAddNotFlatItemToBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="warehouse" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BoxTest" />
-      <option name="METHOD_NAME" value="tryAddNotFlatItemToBox" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,19 +155,19 @@
     <list>
       <item itemvalue="JUnit.BoxTest" />
       <item itemvalue="JUnit.BoxTest.tryAddFlatItemToBox" />
-      <item itemvalue="JUnit.BoxTest.tryAddNotFlatItemToBox" />
       <item itemvalue="JUnit.StackedTest.createStackTest" />
       <item itemvalue="JUnit.StackedTest.putItemToStackTest" />
       <item itemvalue="Maven.warehouse [clean,test]" />
       <item itemvalue="Maven.warehouse [allure:serve]" />
+      <item itemvalue="Application.Run" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Run" />
         <item itemvalue="JUnit.BoxTest" />
         <item itemvalue="JUnit.StackedTest.putItemToStackTest" />
         <item itemvalue="JUnit.StackedTest.createStackTest" />
         <item itemvalue="JUnit.BoxTest.tryAddFlatItemToBox" />
-        <item itemvalue="JUnit.BoxTest.tryAddNotFlatItemToBox" />
       </list>
     </recent_temporary>
   </component>
@@ -303,26 +225,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="466" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579933211653" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581490275120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581490275120" />
+    <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1581490302750">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1581490302750" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1580314098274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580314098274" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1580562290617">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581489790908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580562290617" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1580562290617">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581489790908" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581489790908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580562290617" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1580562290617">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581489790908" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581489790908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580562290617" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1580562290617">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581489790908" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581489790908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580562290617" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581489790908" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1580372819807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

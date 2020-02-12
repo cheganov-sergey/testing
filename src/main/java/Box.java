@@ -19,21 +19,21 @@ public class Box extends Item implements PutGetItem {
     public Box() {
         super ("Стандартная коробка", 1.0, true, true);
         this.allowadlWeight = 30.0;
-        this.insideItems = new ArrayList<Item>();
+        this.insideItems = new ArrayList<>();
     }
 
     // Конструктор со всеми параметрами
     public Box(String name, double weight, boolean flat, boolean bigSize, Set<String> otherCharacters, double allowadlWeight) {
         super(name, weight, flat, bigSize, otherCharacters);
         this.allowadlWeight = allowadlWeight;
-        this.insideItems = new ArrayList<Item>();
+        this.insideItems = new ArrayList<>();
         }
 
-    // Конструктор без мноества
+    // Конструктор без множества
     public Box(String name, double weight, boolean flat, boolean bigSize, double allowadlWeight) {
         super(name, weight, flat, bigSize);
         this.allowadlWeight = allowadlWeight;
-        this.insideItems = new ArrayList<Item>();
+        this.insideItems = new ArrayList<>();
     }
 
     @Override
@@ -55,9 +55,10 @@ public class Box extends Item implements PutGetItem {
      * @param item предмет который мы хотм положить в коробку
      * @throws CaseExсeption в случае если коробка порвется от перегруза
      */
+    @Override
     public void putItem(Item item) throws CaseExсeption{
 
-        if (!(item instanceof Box)) {  //  это не коробка?
+        if (!(item.equals(this))) {  //  //нельзя упаковаться само в себя
             if (!item.isPacked()){      // предмет уже упакован?
                if (!item.isBigSize()) {     // предмет влазит в коробку?
                     double weigthMax = 0.0;  //  коробка выдержит?
@@ -77,6 +78,7 @@ public class Box extends Item implements PutGetItem {
      * получение указанного предмета
      * @param item предмет который мы хотим достать из коробки
      */
+    @Override
     public void getItem(Item item) {
         if (!this.insideItems.isEmpty()) {  // а не пусто ли?
             if (insideItems.contains(item)) {   // а может предмета здесь нет?
@@ -90,9 +92,10 @@ public class Box extends Item implements PutGetItem {
      * Вывести список предметов в алфавитном порядке (то что содержится в коробке
      * реализация через Стрим
      */
+    @Override
       public void showItem(){
           if(!this.insideItems.isEmpty()){
-              System.out.println("Коробка содержит: ");
+              System.out.println(this.name + "содержит: ");
               List<Item> byName = insideItems.stream().
                       sorted(Comparator.comparing(Item::getName)).
                       collect(Collectors.toList());
@@ -104,7 +107,7 @@ public class Box extends Item implements PutGetItem {
      * Получить текущий вес коробки
      * @return возвращает суммарный вес тары и предметов в ней
      */
-
+    @Override
     public double getCurrentweigth() {
         double currentWeigth = this.getWeight();
         for(Item it : insideItems) {
@@ -113,9 +116,8 @@ public class Box extends Item implements PutGetItem {
         return currentWeigth;
     }
 
-    /**
-     * --- Реализация интерфейса GetPutItem
-      */
+    // --- Реализация интерфейса GetPutItem завершена
+
 
     /**
      * Получить случайный предмет из коробки
@@ -130,11 +132,36 @@ public class Box extends Item implements PutGetItem {
         }
     }
 
+    /**
+     * узнать общий вес
+     * @return текущий вес тары и содержимого в кг.
+     */
     public double getAllowadlWeight() {
         return allowadlWeight;
     }
 
+    /**
+     * содержимое коробки
+     * @return список предметов
+     */
     public List<Item> getInsideItems() {
         return insideItems;
+    }
+
+    /**
+     * Достать предмет по имени
+     * @param name имя искомого предмета
+     */
+    public void getByName (String name){        // не понял как добавить флаг "packed"
+        if (!this.insideItems.isEmpty()) {
+            Iterator<Item> iterator = this.insideItems.iterator();
+            while (iterator.hasNext()) {
+                Item it = iterator.next();
+                if (it.getName().equals(name)) {
+                    System.out.println("Мы взяли " + it.getName());
+                    iterator.remove();
+                }
+            }
+        }
     }
 }

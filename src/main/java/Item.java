@@ -19,7 +19,7 @@ public abstract class Item {
       this.weight = 0.0;
       this.flat = true;
       this.bigSize = false;
-      this.otherCharacters = new HashSet<String>();
+      this.otherCharacters = new HashSet<>();
       boolean packed = false;
    }
    /**
@@ -34,7 +34,7 @@ public abstract class Item {
       this.weight = weight;
       this.flat = flat;
       this.bigSize = bigSize;
-      this.otherCharacters = new HashSet<String>();
+      this.otherCharacters = new HashSet<>();
       this.packed = packed;
    }
 
@@ -44,7 +44,7 @@ public abstract class Item {
       this.weight = weight;
       this.flat = flat;
       this.bigSize = bigSize;
-      this.otherCharacters = new HashSet<String>();
+      this.otherCharacters = new HashSet<>();
       boolean packed = false;
    }
 
@@ -54,7 +54,7 @@ public abstract class Item {
       this.weight = weight;
       this.flat = flat;
       this.bigSize = bigSize;
-      this.otherCharacters = new HashSet<String>(otherCharacters);
+      this.otherCharacters = new HashSet<>(otherCharacters);
       boolean packed = false;
    }
 
@@ -87,11 +87,6 @@ public abstract class Item {
 
    public boolean isPacked() {
       return packed;
-   }
-
-
-   public void setOtherCharacters(Set<String> otherCharacters) {
-      this.otherCharacters = otherCharacters;
    }
 
    public void setPacked(boolean packed) {
